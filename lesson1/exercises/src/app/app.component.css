@@ -1,0 +1,12 @@
+hr {
+    border-top: 2px solid black;
+}
+
+.container {
+    background-color: dodgerblue;
+}
+
+.col-3 {
+    background-color: #FFF;
+    border-left: 1px dashed black;
+}
