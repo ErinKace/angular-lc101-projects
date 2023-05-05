@@ -1,0 +1,11 @@
+.chores {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:chocolate;
+    font-size: 2vw;
+    font-style:oblique;
+}
+
+.chores h3 {
+    font-size: 3vw;
+    text-decoration: underline;
+}
