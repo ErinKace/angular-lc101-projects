@@ -23,3 +23,6 @@ button {
 .copper {
    background: #b87333 ;
 }
+.move-button {
+   float:right;
+}

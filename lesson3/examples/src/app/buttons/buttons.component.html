@@ -1,7 +1,9 @@
 <div class="buttons">
    <h3>{{buttonHeading}}</h3>
-   <button class="gold">Gold</button> <br>
-   <button class="silver">Silver</button> <br>
-   <button class="copper">Copper</button> <hr>
-   <button>Activate/Deactivate Buttons</button>
+   <button [class.gold]="!inactive" [disabled]="inactive" (click)="inactive = true">Gold</button> <br>
+   <button [class.sivler]="!silverInactive" [disabled]="silverInactive" (click)="silverInactive=true">Silver</button> <br>
+   <button [class.copper]="!copperInactive" [disabled]="copperInactive" (click)="copperInactive=true">Copper</button> <hr>
+   <button (click)="activateButtons()">Activate Buttons</button>
 </div>
+<button (mouseover)="deactive=true" (mouseout)="deactive=false" [disabled]="deactive">Kronk, Why do we even have this button?</button>
+<button (mouseover)="moveButton = !moveButton" [class.move-button]="moveButton">Catch me!</button>
