@@ -13,6 +13,10 @@ export class AppComponent {
   horizontal: number = 0;
   message = 'Space shuttle ready for takeoff!';
   takenOff: boolean = false;
+  tooHigh: boolean = false;
+  tooLeft: boolean = false;
+  tooRight: boolean = false;
+  tooLow: boolean = false;
 
   handleTakeOff() {
     let result = window.confirm("Are you sure the shuttle is ready for take off?");
@@ -64,13 +68,34 @@ export class AppComponent {
     this.height = this.height - 10000;
    }
   }
+  offTheMap() {
+    if (this.height >= 340000) {
+      this.tooHigh = true;
+    } else {
+      this.tooHigh = false;
+    }
+    if (this.height < 0) {
+      this.tooLow = true;
+    } else {
+      this.tooLow = false;
+    }
+    if (this.horizontal >= 380000) {
+      this.tooRight = true;
+    } else {
+      this.tooRight = false;
+    }
+    if (this.horizontal <= -20000) {
+      this.tooLeft = true;
+    } else this.tooLeft = false;
+  }
 
   collisionWarning() {
-    if (this.height >= 320000 || this.height < 0 || this.horizontal < 0 || this.horizontal >= 330000) {
+    if (this.height >= 320000 || this.height <= 0 || this.horizontal < 0 || this.horizontal >= 330000) {
       this.color = 'orange';
     } else {
       this.color = 'blue';
     }
+    this.offTheMap();
   }
 
 }
